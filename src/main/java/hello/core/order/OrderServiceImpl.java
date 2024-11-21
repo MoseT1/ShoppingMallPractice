@@ -20,7 +20,8 @@ public class OrderServiceImpl implements OrderService {
     * OrderServiceImpl이 DiscountPolicy에만 의존하는 게 아닌 그 구현체에도 의존함
     * 그로 인해 구현체가 바뀔 때, 코드를 수정하게 됨 -> DIP 위반
     * */
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
+
 
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
